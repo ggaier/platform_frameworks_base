@@ -1877,6 +1877,7 @@ final class ActivityStack {
                 setVisible(r, true);
             }
             if (r != starting) {
+                //检查 activity 进程是否启动, 如果没有, 则启动进程.
                 mStackSupervisor.startSpecificActivityLocked(r, andResume, false);
                 return true;
             }

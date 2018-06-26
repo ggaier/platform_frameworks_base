@@ -233,6 +233,7 @@ class ActivityStarter {
 
         ProcessRecord callerApp = null;
         if (caller != null) {
+            //检查调用者是否存在
             callerApp = mService.getRecordForAppLocked(caller);
             if (callerApp != null) {
                 callingPid = callerApp.pid;
@@ -395,6 +396,7 @@ class ActivityStarter {
         inTask = mInterceptor.mInTask;
         callingPid = mInterceptor.mCallingPid;
         callingUid = mInterceptor.mCallingUid;
+        //如果不能启动 Activity 的话, 还要通知启动结果, 启动 Activity 会收到一个 cancel 的 result_code
         options = mInterceptor.mActivityOptions;
         if (abort) {
             if (resultRecord != null) {

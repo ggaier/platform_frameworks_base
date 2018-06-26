@@ -1373,6 +1373,9 @@ public final class ActivityStackSupervisor implements DisplayListener {
         return true;
     }
 
+    /**
+     * 启动 activity 所在的进程.
+     */
     void startSpecificActivityLocked(ActivityRecord r,
             boolean andResume, boolean checkConfig) {
         // Is this activity's application already running?
@@ -1407,6 +1410,9 @@ public final class ActivityStackSupervisor implements DisplayListener {
                 "activity", r.intent.getComponent(), false, false, true);
     }
 
+    /**
+     * 检查是否有权限启动某个 Activity.
+     */
     boolean checkStartAnyActivityPermission(Intent intent, ActivityInfo aInfo,
             String resultWho, int requestCode, int callingPid, int callingUid,
             String callingPackage, boolean ignoreTargetSecurity, ProcessRecord callerApp,
