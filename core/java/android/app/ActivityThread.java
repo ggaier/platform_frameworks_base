@@ -6039,6 +6039,7 @@ public final class ActivityThread {
     }
 
     /**
+     * WB_ANDROID: 
      * 当一个应用的进程启动的时候, 就会调用该类的 main 方法. 
      * 同时该类也是一个进程启动的类的入口.
      */
